@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morrish Hosting Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+<body>
+    <!-- Header Section Start -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="nav-logo">MORRISH</a>
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" aria-expanded="false">Shared Hosting <span class="arrow">▾</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">INDIA Shared</a></li>
+                            <li><a href="#">USA Shared</a></li>
+                            <li><a href="#">Cloud Hosting</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" aria-expanded="false">INDIA VPS <span class="arrow">▾</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">SSD VPS India</a></li>
+                            <li><a href="#">NVMe VPS India</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" aria-expanded="false">USA VPS <span class="arrow">▾</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">SSD VPS USA</a></li>
+                            <li><a href="#">NVMe VPS USA</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" aria-expanded="false">Services <span class="arrow">▾</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">Presnol Counsulting</a></li>
+                            <li><a href="#">Reseller Program</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link nav-login">Login</a>
+                    </li>
+                </ul>
+                <div class="hamburger"> <!-- This is the three-line menu icon for mobile view -->
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Main Content Start -->
+    <main>
+        <!-- Hero Section Start -->
+        <section class="hero-section">
+            <div class="hero-slider">
+                 <!-- Slide: Domain (ACTIVE BY DEFAULT) -->
+                 <div class="hero-slide active-slide">
+                    <div class="hero-content">
+                        <h1>Find & Secure Your Perfect Domain Name</h1>
+                        <h2>Your Online Identity Starts Here. Same Price for Registration & Renewal!</h2>
+                        <p>Unlock your brand's potential with the right domain. Easy search, transparent pricing, and a wide range of TLDs. What will your address be?</p>
+                        <div class="domain-search-container-revamped">
+                            <div class="domain-input-group">
+                                <input type="text" id="domainNameInput" placeholder="e.g., example or example.com">
+                                <button class="btn btn-primary btn-domain-search" id="domainSearchButton">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                    </svg>
+                                    <span>Search Now</span>
+                                </button>
+                            </div>
+                            <div id="domainSearchResult" class="domain-result-message"></div>
+                            <div class="tld-showcase">
+                                <div class="tld-item"><span class="tld-ext">.com</span> <span class="tld-price">₹599</span></div>
+                                <div class="tld-item"><span class="tld-ext">.in</span> <span class="tld-price">₹610</span></div>
+                                <div class="tld-item"><span class="tld-ext">.org</span> <span class="tld-price">₹750</span></div>
+                                <div class="tld-item"><span class="tld-ext">.net</span> <span class="tld-price">₹800</span></div>
+                                <div class="tld-item"><span class="tld-ext">.co.in</span> <span class="tld-price">₹450</span></div>
+                                <div class="tld-item"><span class="tld-ext">.online</span> <span class="tld-price">₹299</span></div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-secondary" style="margin-top: 30px;">See All Domain Extensions & Offers</a>
+                    </div>
+                </div>
+                <!-- Slide: Hosting -->
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <h1>Reliable & Lightning-Fast Web Hosting</h1>
+                        <h2>Power Your Ambition with MORRISH</h2>
+                        <p>Get your website online in minutes with our secure, high-performance hosting solutions. Enjoy 99.9% uptime, 24/7 expert support, and scalable plans designed for growth.</p>
+                        <div class="hero-buttons">
+                            <a href="#" class="btn btn-primary">View Hosting Plans</a>
+                            <a href="#" class="btn btn-secondary">Get Free Migration</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide: Reseller Partner -->
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <h1>Partner with MORRISH: Grow Your Reseller Empire!</h1>
+                        <h2>Maximize Profits with Our Competitive Reseller Tiers & Dedicated Support.</h2>
+                        <p>Join our thriving partner ecosystem. Get access to exclusive discounts, a robust platform, and dedicated partner support designed to help you scale your hosting reselling business effortlessly and profitably.</p>
+                        <div class="hero-buttons">
+                            <a href="#" class="btn btn-primary">Become a Reseller</a>
+                            <a href="#" class="btn btn-secondary">Explore Features</a>
+                        </div>
+                        <div class="slide-terms-note">
+                            <span>*Terms & Conditions Apply.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide: Web Development -->
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <h1>Need a Website? Get Rocket Speed & Hollywood Looks!</h1>
+                        <h2>Pixel-Perfect Websites That Amaze, With Full Support That Slays!</h2>
+                        <p>Say goodbye to boring websites! We craft dynamic, engaging, and conversion-focused web experiences that will take your business to new heights. SEO-ready, mobile-first, and so stunning people can't look away. With us, your online success is guaranteed!</p>
+                        <div class="hero-buttons">
+                            <a href="#" class="btn btn-primary">Launch Your Project!</a>
+                            <a href="#" class="btn btn-secondary">Get Free Consultation</a>
+                        </div>
+                        <div class="slide-terms-note">
+                            <span>Pixel-Perfect Design, Powerful Performance - Without Compromise!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide: Consulting -->
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <h1>Skyrocket Your Business with Expert Sales Consulting</h1>
+                        <h2>Strategic Insights for Measurable Growth</h2>
+                        <p>Struggling to hit your sales targets? Our free, no-obligation consultation will provide actionable strategies to optimize your sales funnel and boost revenue. Don't miss out!</p>
+                        <div class="hero-buttons">
+                            <a href="#" class="btn btn-primary">Book Your FREE Sales Audit</a>
+                            <a href="#" class="btn btn-secondary">Learn About Our Process</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide: VPS -->
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <h1>Ultimate Power VPS: India & USA Locations</h1>
+                        <h2>India VPS from <del class="slashed-price">₹441</del> <span class="highlight-price">₹315/mo!</span> Limited Time Offer!</h2>
+                        <p>Experience dedicated resources and blazing-fast SSD/NVMe performance. Full root access, scalable on demand, and perfect for high-traffic websites or demanding applications. Secure your power server today!</p>
+                        <div class="hero-buttons">
+                            <a href="#" class="btn btn-primary">Configure Your VPS</a>
+                            <a href="#" class="btn btn-secondary">Compare VPS Features</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Navigation Arrows (Not Touched) -->
+                <button class="slider-nav-btn prev-slide" aria-label="Previous slide">❮</button>
+                <button class="slider-nav-btn next-slide" aria-label="Next slide">❯</button>
+
+                <!-- Slider Dots Container (Commented Out as Requested) -->
+                <!--
+                <div class="slider-dots">
+                     Dots will be generated by JavaScript 
+                </div>
+                -->
+            </div>
+        </section>
+        <!-- Hero Section End -->
+
+        <!-- Services Overview Section Start -->
+        <section class="services-overview">
+            <div class="container services-overview-container">
+                <h2 class="section-title text-center">Explore Our Core Services</h2>
+                <p class="section-subtitle text-center">From robust hosting solutions to captivating web design and strategic consulting, we provide the tools you need to thrive online.</p>
+
+                <div class="services-grid">
+                    <!-- Card 1: Web Hosting -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                        </div>
+                        <h3 class="service-title">Reliable Web Hosting</h3>
+                        <p class="service-description">Blazing-fast, secure, and scalable hosting plans perfect for any website. Enjoy 99.9% uptime and 24/7 expert support.</p>
+                        <a href="#hosting-plans" class="btn btn-service-card">View Hosting Plans</a>
+                    </div>
+
+                    <!-- Card 2: VPS Hosting -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="12" x2="2" y2="12"></line><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path><line x1="6" y1="16" x2="6.01" y2="16"></line><line x1="10" y1="16" x2="10.01" y2="16"></line></svg>
+                        </div>
+                        <h3 class="service-title">High-Performance VPS</h3>
+                        <p class="service-description">Gain full control with our powerful SSD & NVMe VPS solutions. Ideal for growing businesses and demanding applications.</p>
+                        <a href="#vps-configure" class="btn btn-service-card">Configure Your VPS</a>
+                    </div>
+
+                    <!-- Card 3: Web Development -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        </div>
+                        <h3 class="service-title">Custom Web Development</h3>
+                        <p class="service-description">We craft stunning, responsive, and user-friendly websites that convert visitors into customers. Your vision, our expertise.</p>
+                        <a href="#webdev-quote" class="btn btn-service-card">Get a Project Quote</a>
+                    </div>
+
+                    <!-- Card 4: Domain Names -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        </div>
+                        <h3 class="service-title">Register Your Domain</h3>
+                        <p class="service-description">Find and secure the perfect domain name for your brand. Simple search, transparent pricing, and a wide array of extensions.</p>
+                        <a href="#domain-search" class="btn btn-service-card">Find Your Domain</a>
+                    </div>
+
+                    <!-- Card 5: Reseller Hosting -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3 class="service-title">Reseller Partner Program</h3>
+                        <p class="service-description">Launch your own hosting business! Our white-label reseller plans offer great discounts, a robust platform, and dedicated support.</p>
+                        <a href="#reseller-program" class="btn btn-service-card">Become a Reseller</a>
+                    </div>
+
+                    <!-- Card 6: Strategic Business Consulting -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22m-9-9h18"></path><circle cx="12" cy="12" r="4"></circle><path d="M7.43 7.43l-1.06 1.06M17.63 7.43l-1.06-1.06M7.43 16.57l-1.06-1.06M17.63 16.57l-1.06 1.06"></path></svg>
+                        </div>
+                        <h3 class="service-title">Strategic Consulting</h3>
+                        <p class="service-description">Expert insights and actionable strategies to optimize your sales funnel, boost revenue, and accelerate your business growth.</p>
+                        <a href="#consulting-audit" class="btn btn-service-card">Book a Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services Overview Section End -->
+
+        <!-- Shared Hosting Focus Section Start -->
+        <section class="hosting-focus-section">
+            <div class="container hosting-focus-container">
+                <h2 class="section-title text-center">Seamless Start with Shared Hosting</h2>
+                <p class="section-subtitle text-center">Everything you need to launch and grow, starting today.</p>
+                <div class="hosting-focus-content">
+                    <div class="hosting-focus-gif">
+                        <img src="source/gif2.gif" alt="Easy Shared Hosting Features GIF">
+                    </div>
+                    <div class="hosting-focus-text">
+                        <div class="features-pricing-wrapper">
+                            <div class="features-list-area">
+                                <h3 class="area-title">Key Features Included:</h3>
+                                <ul class="features-list">
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Hassle-Free Website Migration</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Free SSL Certificate</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06-.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg> Easy-to-Use Control Panel</li>
+                                </ul>
+                            </div>
+                            <div class="vertical-separator"></div>
+                            <div class="pricing-cta-area">
+                                <h3 class="area-title">Starting At Only</h3>
+                                <p class="start-price"><span class="highlight-price">₹299/month!</span></p>
+                                <a href="#" class="btn btn-primary btn-get-started">Get Started Today</a>
+                            </div>
+                        </div>
+                        <p class="ideal-for-text">Shared hosting is ideal for beginners, personal blogs, portfolios, and small business websites requiring a reliable and affordable hosting solution.</p>
+                        <div class="hosting-options-info">
+                            <h4>Choose Your Perfect Plan:</h4>
+                            <p>We offer tailored Shared Hosting options including <a href="#">INDIA Shared</a> for local speed, <a href="#">USA Shared</a> for global reach, and scalable <a href="#">Cloud Hosting</a>.</p>
+                            <p>Need help deciding? <a href="#support">Contact our experts!</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Shared Hosting Focus Section End -->
+
+        <!-- VPS Focus Section Start -->
+        <section class="vps-focus-section">
+            <div class="container vps-focus-container">
+               <h2 class="section-title text-center">Unleash Power with Our VPS Hosting</h2>
+               <p class="section-subtitle text-center">Ultimate control, performance, and scalability for your demanding projects.</p>
+               <div class="vps-focus-content">
+                   <div class="vps-focus-text">
+                       <div class="features-pricing-wrapper">
+                           <div class="features-list-area">
+                               <h3 class="area-title">VPS Key Advantages:</h3>
+                               <ul class="features-list">
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cpu"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg> Dedicated Resources (CPU/RAM)</li>
+                                   <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-terminal"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg> Full Root Access</li>
+                                   <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-database"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg> Blazing Fast SSD & NVMe</li>
+                                   <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Choice of Locations (India/USA)</li>
+                                   <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> Dedicated IP Address Included</li>
+                                   <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rotate-cw"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg> Optional Automated Backups</li>
+                                   <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trending-up"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg> Easily Scalable Resources</li>
+                               </ul>
+                           </div>
+                           <div class="vertical-separator"></div>
+                           <div class="pricing-cta-area vps-cta">
+                                <h3 class="area-title">Starting At Only</h3>
+                                <p class="start-price"><span class="highlight-price">₹499/month!</span></p>
+                                <div class="vps-button-group">
+                                    <a href="#" class="btn btn-primary btn-vps-config">Configure INDIA VPS</a>
+                                    <a href="#" class="btn btn-secondary btn-vps-config">Configure USA VPS</a>
+                                </div>
+                           </div>
+                       </div>
+                        <p class="ideal-for-text">Ideal for high-traffic websites, e-commerce stores, complex applications, and agencies managing multiple client sites.</p>
+                        <div class="hosting-options-info">
+                            <h4>Locations & Options:</h4>
+                            <p>Choose between high-speed SSD or ultra-fast NVMe drives with servers located in <a href="#">INDIA</a> and the <a href="#">USA</a> for optimal latency.</p>
+                            <p>Explore our <a href="#india-vps">INDIA VPS</a> and <a href="#usa-vps">USA VPS</a> options.</p>
+                        </div>
+                   </div>
+                   <div class="vps-focus-image">
+                       <img src="source/1.png" alt="High Performance VPS Hosting Illustration">
+                   </div>
+               </div>
+           </div>
+        </section>
+        <!-- VPS Focus Section End -->
+
+        <!-- Web Development Focus Section Start -->
+        <section class="webdev-focus-section">
+             <div class="container webdev-focus-container">
+                <h2 class="section-title text-center">Bring Your Vision to Life Online</h2>
+                <p class="section-subtitle text-center">Custom websites crafted for performance, aesthetics, and results.</p>
+                <div class="webdev-focus-content">
+                    <div class="webdev-focus-gif">
+                        <img src="source/gif1.gif" alt="Web Development Process GIF">
+                    </div>
+                    <div class="webdev-focus-text">
+                        <div class="features-pricing-wrapper">
+                            <div class="features-list-area">
+                                <h3 class="area-title">What We Offer:</h3>
+                                <ul class="features-list">
+                                     <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> Custom & WordPress Design</li>
+                                     <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> Lightning-Fast Loading Speed</li>
+                                     <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg> Fully Responsive & Mobile-First</li>
+                                     <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-3"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg> Pixel-Perfect Attention to Detail</li>
+                                     <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Clean, Efficient Coding Practices</li>
+                                     <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> SEO-Friendly Foundation</li>
+                                </ul>
+                            </div>
+                            <div class="vertical-separator"></div>
+                            <div class="pricing-cta-area webdev-cta">
+                                 <h3 class="area-title">Get Started</h3>
+                                 <p class="start-price">Websites from <span class="highlight-price">₹3199!</span></p>
+                                 <a href="#" class="btn btn-primary btn-get-quote">Request a Quote</a>
+                            </div>
+                        </div>
+                         <p class="ideal-for-text">Whether you need a simple portfolio, a powerful e-commerce store, or a fully custom web application, we build solutions tailored to your unique goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Web Development Focus Section End -->
+
+        <!-- Reseller Program Focus Section Start -->
+        <section class="reseller-focus-section">
+            <div class="container reseller-focus-container">
+                <h2 class="section-title text-center">Launch Your Hosting Business with MORRISH</h2>
+                <p class="section-subtitle text-center">Empowering you with the tools and support to succeed as a hosting reseller.</p>
+
+                <div class="reseller-focus-content">
+                    <!-- Left Column: Text Content -->
+                    <div class="reseller-focus-text">
+                        <div class="features-pricing-wrapper">
+                            <div class="features-list-area">
+                                <h3 class="area-title">Key Reseller Benefits:</h3>
+                                <ul class="features-list">
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg> Generous Discounts & Profit Margins</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> White-Label Solution: Your Brand, Our Power</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06-.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg> Robust & Easy-to-Use Control Panel</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-headphones"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg> Dedicated Partner Support</li>
+                                </ul>
+                            </div>
+                            <div class="vertical-separator"></div>
+                            <div class="pricing-cta-area reseller-cta">
+                                <h3 class="area-title">Ready to Grow?</h3>
+                                <p class="start-price">Competitive Tiers. Maximum Profit.</p>
+                                <div class="reseller-button-group">
+                                    <a href="#" class="btn btn-primary btn-reseller-join">Join Us Now</a>
+                                    <a href="#" class="btn btn-secondary btn-reseller-expert">Talk to an Expert</a>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="ideal-for-text">Our reseller program is perfect for web designers, developers, agencies, and entrepreneurs looking to offer hosting services without managing actual infrastructure.</p>
+                    </div>
+                    <!-- Right Column: Image -->
+                    <div class="reseller-focus-image">
+                        <img src="source/reseller.jpeg" alt="Morrish Reseller Program Illustration">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Reseller Program Focus Section End -->
+
+        <!-- Support & Consulting Section Start -->
+        <section class="support-focus-section">
+            <div class="container support-focus-container">
+               <h2 class="section-title text-center">Dedicated Support & Growth Consulting</h2>
+               <p class="section-subtitle text-center">We're invested in your success, providing expert help whenever you need it.</p>
+               <div class="support-focus-content">
+                   <div class="support-focus-text">
+                       <div class="support-box">
+                            <h3 class="area-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-life-buoy"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"></line><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"></line><line x1="14.83" y1="9.17" x2="18.36" y2="5.64"></line><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"></line></svg> Unlimited Expert Hosting Support</h3>
+                            <p>Facing an issue with your Hosting or VPS? Our friendly, knowledgeable team is available 24/7 via chat, ticket, or email to resolve problems quickly and efficiently.</p>
+                       </div>
+                       <div class="support-box">
+                           <h3 class="area-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-gift"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg> FREE Growth Consulting</h3>
+                           <p>Partner with us and get a FREE monthly consulting session focused on your growth. We'll analyze your setup, suggest optimizations, and help you leverage our services for maximum impact.</p>
+                       </div>
+                        <div class="support-cta">
+                            <a href="#" class="btn btn-primary">Contact Support</a>
+                            <a href="#" class="btn btn-secondary">Learn About Consulting</a>
+                        </div>
+                   </div>
+                   <div class="support-focus-image">
+                       <img src="source/support.png" alt="Customer Support and Consulting Illustration">
+                   </div>
+               </div>
+           </div>
+        </section>
+        <!-- Support & Consulting Section End -->
+
+        <!-- Testimonial Section Start -->
+        <section class="testimonial-section">
+            <div class="container testimonial-container">
+                 <h2 class="section-title text-center">Trusted by Hundreds of Happy Clients</h2>
+                 <p class="section-subtitle text-center">See why businesses and individuals love working with MORRISH.</p>
+                 <div class="testimonial-slider">
+                    <div class="testimonial-track">
+                        <div class="testimonial-card">
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Incredible speed on their India Shared Hosting! My blog loads instantly now. Support was super helpful during migration."</p>
+                            <div class="author-info"><strong>Rohan Verma</strong><span>Travel Blogger, Wanderlust Trails</span></div>
+                        </div>
+                        <div class="testimonial-card">
+                             <div class="stars">⭐⭐⭐⭐⭐</div>
+                             <p>"The NVMe VPS performance is phenomenal. Handling traffic spikes is effortless. Full root access is a major plus."</p>
+                             <div class="author-info"><strong>Aisha Khan</strong><span>Lead Developer, Tech Innovations Ltd.</span></div>
+                         </div>
+                        <div class="testimonial-card">
+                             <div class="stars">⭐⭐⭐⭐⭐</div>
+                             <p>"MORRISH designed a stunning, professional website for my consultancy. Pixel-perfect and delivered on time!"</p>
+                             <div class="author-info"><strong>Vikram Patel</strong><span>Founder, VP Consulting</span></div>
+                         </div>
+                         <div class="testimonial-card">
+                            <div class="stars">⭐⭐⭐⭐</div>
+                            <p>"Easy domain registration process and fair renewal pricing. Finding the right domain was simple."</p>
+                            <div class="author-info"><strong>Sneha Gupta</strong><span>Small Business Owner</span></div>
+                        </div>
+                        <div class="testimonial-card">
+                             <div class="stars">⭐⭐⭐⭐⭐</div>
+                             <p>"Their reseller platform is robust and easy to manage. The discounts help my bottom line significantly. Great partner support!"</p>
+                             <div class="author-info"><strong>Amit Singh</strong><span>Web Design Agency Owner</span></div>
+                         </div>
+                        <div class="testimonial-card">
+                             <div class="stars">⭐⭐⭐⭐⭐</div>
+                             <p>"The free sales consulting session provided actionable insights that really helped boost our conversions. Highly valuable!"</p>
+                             <div class="author-info"><strong>Priya Mehta</strong><span>Marketing Manager, Ecom Hub</span></div>
+                         </div>
+                        <div class="testimonial-card">
+                             <div class="stars">⭐⭐⭐⭐</div>
+                             <p>"Switched to their USA VPS for better latency for my international clients. Smooth performance and reliable uptime."</p>
+                             <div class="author-info"><strong>David Miller</strong><span>SaaS Entrepreneur</span></div>
+                         </div>
+                         <div class="testimonial-card">
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Whenever I've needed support, even late at night, their team has been responsive and solved my issues quickly."</p>
+                            <div class="author-info"><strong>Meera Iyer</strong><span>Freelance Designer</span></div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"From Cloud Hosting advice to implementation, Morrish provides expert guidance and top-tier services. Fully satisfied!"</p>
+                            <div class="author-info"><strong>Anil Kumar</strong><span>CTO, Startup Connect</span></div>
+                        </div>
+                        <!-- Duplicates for scroll -->
+                        <div class="testimonial-card">
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Incredible speed on their India Shared Hosting! My blog loads instantly now. Support was super helpful during migration."</p>
+                            <div class="author-info"><strong>Rohan Verma</strong><span>Travel Blogger, Wanderlust Trails</span></div>
+                        </div>
+                        <div class="testimonial-card">
+                             <div class="stars">⭐⭐⭐⭐⭐</div>
+                             <p>"The NVMe VPS performance is phenomenal. Handling traffic spikes is effortless. Full root access is a major plus."</p>
+                             <div class="author-info"><strong>Aisha Khan</strong><span>Lead Developer, Tech Innovations Ltd.</span></div>
+                         </div>
+                        <div class="testimonial-card">
+                             <div class="stars">⭐⭐⭐⭐⭐</div>
+                             <p>"MORRISH designed a stunning, professional website for my consultancy. Pixel-perfect and delivered on time!"</p>
+                             <div class="author-info"><strong>Vikram Patel</strong><span>Founder, VP Consulting</span></div>
+                         </div>
+                         <div class="testimonial-card">
+                            <div class="stars">⭐⭐⭐⭐</div>
+                            <p>"Easy domain registration process and fair renewal pricing. Finding the right domain was simple."</p>
+                            <div class="author-info"><strong>Sneha Gupta</strong><span>Small Business Owner</span></div>
+                        </div>
+                        <div class="testimonial-card">
+                             <div class="stars">⭐⭐⭐⭐⭐</div>
+                             <p>"Their reseller platform is robust and easy to manage. The discounts help my bottom line significantly. Great partner support!"</p>
+                             <div class="author-info"><strong>Amit Singh</strong><span>Web Design Agency Owner</span></div>
+                         </div>
+                        <div class="testimonial-card">
+                             <div class="stars">⭐⭐⭐⭐⭐</div>
+                             <p>"The free sales consulting session provided actionable insights that really helped boost our conversions. Highly valuable!"</p>
+                             <div class="author-info"><strong>Priya Mehta</strong><span>Marketing Manager, Ecom Hub</span></div>
+                         </div>
+                        <div class="testimonial-card">
+                             <div class="stars">⭐⭐⭐⭐</div>
+                             <p>"Switched to their USA VPS for better latency for my international clients. Smooth performance and reliable uptime."</p>
+                             <div class="author-info"><strong>David Miller</strong><span>SaaS Entrepreneur</span></div>
+                         </div>
+                         <div class="testimonial-card">
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Whenever I've needed support, even late at night, their team has been responsive and solved my issues quickly."</p>
+                            <div class="author-info"><strong>Meera Iyer</strong><span>Freelance Designer</span></div>
+                        </div>
+                         <div class="testimonial-card">
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"From Cloud Hosting advice to implementation, Morrish provides expert guidance and top-tier services. Fully satisfied!"</p>
+                            <div class="author-info"><strong>Anil Kumar</strong><span>CTO, Startup Connect</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonial Section End -->
+
+        <!-- Why Choose Us Section Start -->
+        <section class="why-choose-us-section">
+            <div class="container why-choose-us-container">
+                <h2 class="section-title text-center">Experience the MORRISH Advantage</h2>
+                <p class="section-subtitle text-center">Discover why we're the preferred partner for performance, support, and growth.</p>
+                <div class="why-choose-grid">
+                    <div class="why-choose-box">
+                         <div class="why-choose-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
+                         <h3 class="why-choose-title">Blazing Fast Performance</h3>
+                         <p>Optimized servers, NVMe/SSD options, and global locations ensure your website is always fast and responsive.</p>
+                    </div>
+                     <div class="why-choose-box">
+                          <div class="why-choose-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-headphones"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg></div>
+                          <h3 class="why-choose-title">24/7 Expert Support</h3>
+                          <p>Our friendly and knowledgeable support team is always available via multiple channels to assist you, day or night.</p>
+                     </div>
+                     <div class="why-choose-box">
+                          <div class="why-choose-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield-check"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg></div>
+                          <h3 class="why-choose-title">Security & Reliability</h3>
+                          <p>Enjoy peace of mind with free SSL certificates, robust security protocols, and a 99.9% uptime guarantee.</p>
+                     </div>
+                     <div class="why-choose-box">
+                           <div class="why-choose-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                           <h3 class="why-choose-title">Transparent & Affordable</h3>
+                           <p>Get premium features without the premium price. Clear, competitive pricing with no hidden fees.</p>
+                     </div>
+                     <div class="why-choose-box">
+                           <div class="why-choose-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></div>
+                           <h3 class="why-choose-title">Scalable Solutions</h3>
+                           <p>Easily upgrade your resources as your needs evolve, from shared hosting to powerful cloud VPS platforms.</p>
+                     </div>
+                    <div class="why-choose-box">
+                           <div class="why-choose-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-award"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 17 17 23 15.79 13.88"></polyline></svg></div>
+                           <h3 class="why-choose-title">Complete Expertise</h3>
+                           <p>Beyond hosting, leverage our skills in web development and consulting to achieve total online success.</p>
+                     </div>
+                </div>
+                <div class="why-choose-cta">
+                    <a href="#" class="btn btn-primary btn-lg">Explore All Services</a>
+                    <a href="#" class="btn btn-secondary btn-lg">Talk to an Expert</a>
+                </div>
+            </div>
+        </section>
+        <!-- Why Choose Us Section End -->
+
+        <!-- FAQ Section Start -->
+        <section id="faq" class="faq-section">
+            <div class="container faq-container">
+                <h2 class="section-title text-center">Frequently Asked Questions</h2>
+                <p class="section-subtitle text-center">Find quick answers to common questions about our services.</p>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+                            <span>What types of hosting services do you offer?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div id="faq-answer-1" class="faq-answer" role="region">
+                            <p>We offer a range of hosting solutions to fit your needs, including reliable Shared Hosting (India & USA), high-performance Cloud Hosting, and powerful VPS Hosting (SSD & NVMe options in India & USA). Each plan is designed for speed, security, and scalability.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+                            <span>Do you offer domain registration?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div id="faq-answer-2" class="faq-answer" role="region">
+                            <p>Yes, we provide domain registration services with a wide variety of TLDs (Top-Level Domains) like .com, .in, .org, .net, .co.in, .online, and many more. We offer transparent pricing with the same cost for registration and renewal for many popular TLDs.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+                            <span>Can you help with web development if I need a new website?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div id="faq-answer-3" class="faq-answer" role="region">
+                            <p>Absolutely! We specialize in custom web development, creating stunning, responsive, and user-friendly websites. Whether you need a simple portfolio, an e-commerce store, or a complex web application, our team can bring your vision to life with pixel-perfect design and clean code.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+                            <span>What is VPS hosting and when should I choose it?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div id="faq-answer-4" class="faq-answer" role="region">
+                            <p>VPS (Virtual Private Server) hosting gives you dedicated resources (CPU, RAM) and full root access, offering more power and control than shared hosting. You should consider VPS if your website has high traffic, requires custom software installations, or if you need a more robust and scalable solution for e-commerce or demanding applications.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+                            <span>What kind of support do you provide?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div id="faq-answer-5" class="faq-answer" role="region">
+                            <p>We offer 24/7 expert support via chat, ticket, and email for all our hosting services. Our knowledgeable team is dedicated to resolving your issues quickly. Additionally, we provide free growth consulting sessions to help you optimize your online presence and leverage our services effectively.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
+                            <span>What is your Reseller Partner Program?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div id="faq-answer-6" class="faq-answer" role="region">
+                            <p>Our Reseller Partner Program allows you to start your own web hosting business under your brand. We provide white-label solutions, competitive discounts on our services, a robust platform to manage your clients, and dedicated partner support to help you grow your reseller empire profitably.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FAQ Section End -->
+
+        <!-- Why Partner With Morrish Section Start -->
+        <section class="why-partner-section">
+            <div class="container why-partner-container">
+                <h2 class="section-title text-center">Why Partner with MORRISH for Your Success?</h2>
+                <p class="section-subtitle text-center">We're more than just a hosting provider; we're your dedicated ally in the digital world. Discover the core advantages that set us apart and empower your online journey.</p>
+                <div class="benefits-columns">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                        </div>
+                        <h3 class="benefit-title">Unmatched Performance</h3>
+                        <p class="benefit-description">Leverage our cutting-edge infrastructure, including NVMe SSDs and optimized servers, ensuring lightning-fast load times and seamless user experiences for your visitors.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3 class="benefit-title">Dedicated Expert Support</h3>
+                        <p class="benefit-description">Our highly skilled and friendly support team is available 24/7 to resolve your queries promptly, ensuring you're never alone in your hosting journey.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"></path><path d="M9 12l2 2 4-4"></path></svg>
+                        </div>
+                        <h3 class="benefit-title">Proactive Security</h3>
+                        <p class="benefit-description">Rest easy knowing your website is protected with robust security measures, including free SSL certificates, regular backups, and proactive threat monitoring.</p>
+                    </div>
+                </div>
+
+                <!-- Integrated Call to Action within this section -->
+                <div class="section-cta text-center">
+                    <h3 class="cta-hook-line">Ready to Experience the MORRISH Advantage?</h3>
+                    <p>Choose a plan that fits your needs or get in touch with our experts for personalized guidance.</p>
+                    <div class="cta-buttons">
+                        <a href="#hosting-plans" class="btn btn-primary btn-lg btn-glow">View All Hosting Plans</a>
+                        <a href="#contact-support" class="btn btn-secondary btn-lg">Contact Our Team</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Why Partner With Morrish Section End -->
+
+    </main>
+    <!-- Main Content End -->
+
+    <!-- Footer Section Start -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Hosting</h4>
+                    <a href="#">Shared Hosting</a>
+                    <a href="#">VPS Hosting</a>
+                    <a href="#">Cloud Hosting</a>
+                    <a href="#">Domain Names</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Careers</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <a href="#">Knowledge Base</a>
+                    <a href="#">System Status</a>
+                    <a href="#">Report Abuse</a>
+                    <a href="#">Client Login</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 MORRISH Hosting. All Rights Reserved. (coded by Morrish Mahato)</p>
+                <p>
+                    <a href="#">Privacy Policy</a> |
+                    <a href="#">Terms of Service</a> |
+                    <a href="#">Sitemap</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <script src="index.js"></script>
+</body>
+</html>
