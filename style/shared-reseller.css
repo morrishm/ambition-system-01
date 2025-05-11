@@ -1,0 +1,2211 @@
+/* Global Resets & Variables: Start */
+:root {
+    --primary-color-original: #1A1A2E;
+    --primary-color: #262C4D;
+    --secondary-color: #4A4E69;
+    --services-bg-color: #5660a3;
+    --accent-color: #00cfe8;
+    --text-light: #FFFFFF;
+    --text-dark: #212529;
+    --text-gray: #495057;
+    --nav-height: 70px;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Open Sans', sans-serif;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --warning-color: #ffc107;
+    --focus-ring-color: #00a8b5;
+    --secondary-color-rgb: 74, 78, 105;
+    --accent-rgb: 0, 207, 232;
+    --scroll-speed: 40s;
+    --testimonial-card-count-original: 9; /* IMPORTANT: Set to original number of cards */
+    --success-rgb: 40, 167, 69;
+    --error-rgb: 220, 53, 69;
+    --neutral-color: #6c757d;
+    --neutral-rgb: 108, 117, 125;
+}
+/* Global Resets & Variables: End */
+
+/* Basic Styles: Start */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.7;
+    color: var(--text-light);
+    font-family: var(--font-secondary);
+    background-color: var(--primary-color);
+    /* Add padding-top to body to prevent content from being hidden by fixed navbar */
+    padding-top: var(--nav-height); 
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--focus-ring-color);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.5em;
+    color: var(--text-light);
+}
+/* Basic Styles: End */
+
+/* Navbar CSS: Start */
+.navbar {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    height: var(--nav-height);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-logo {
+    font-family: var(--font-primary);
+    font-size: 1.9em;
+    font-weight: 800;
+    color: var(--text-light);
+}
+
+.nav-logo:focus-visible {
+    outline-offset: 4px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    padding: 10px 16px;
+    display: block;
+    color: var(--text-light);
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 3px;
+}
+
+.nav-link:hover,
+.nav-link.active-nav { /* Add .active-nav for current page indication */
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+}
+
+.nav-link:focus-visible {
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+    outline: 2px solid var(--focus-ring-color);
+    outline-offset: -2px;
+}
+
+.nav-link .arrow {
+    font-size: 0.7em;
+    margin-left: 5px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover > .nav-link .arrow,
+.nav-item.open > .nav-link .arrow { /* .open class for JS toggling on mobile */
+    transform: rotate(180deg);
+}
+
+.nav-login {
+    background-color: var(--accent-color);
+    color: var(--primary-color-original) !important;
+    padding: 9px 20px;
+    border-radius: 5px;
+    margin-left: 15px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-login:hover {
+    background-color: #00a8b5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav-login:focus-visible {
+    background-color: #00a8b5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 0 2px var(--primary-color), 0 0 0 4px var(--focus-ring-color);
+    outline: none;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--secondary-color);
+    border-top: 3px solid var(--accent-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    min-width: 200px;
+    z-index: 1001;
+    border-radius: 0 0 5px 5px;
+    padding: 5px 0;
+}
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    display: block;
+    color: var(--text-light);
+    font-weight: 400;
+    white-space: nowrap;
+    border-radius: 0;
+}
+
+.dropdown-menu li a:focus-visible {
+    background-color: var(--accent-color);
+    color: var(--primary-color-original);
+    outline-offset: -2px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color-original);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
+    z-index: 1001; /* Ensure hamburger is above nav-menu if it animates weirdly */
+}
+
+.hamburger:focus-visible {
+    outline: 2px solid var(--focus-ring-color);
+    outline-offset: 2px;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin: 6px auto;
+    background-color: var(--text-light);
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+/* Navbar CSS: End */
+
+/* Navbar Media Queries: Start */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: var(--nav-height);
+        flex-direction: column;
+        background-color: var(--primary-color);
+        width: 100%;
+        height: calc(100vh - var(--nav-height));
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        overflow-y: auto;
+        padding-bottom: 20px;
+    }
+    .nav-menu.active { /* Class added by JS to show menu */
+        left: 0;
+    }
+    .nav-item {
+        width: 100%;
+        border-bottom: 1px solid var(--secondary-color);
+    }
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+    .nav-link {
+        padding: 15px 20px;
+        font-size: 1.1em;
+    }
+    .nav-login {
+        margin: 20px auto;
+        display: block;
+        width: fit-content;
+    }
+    .dropdown-menu {
+        position: static; /* Change from absolute for mobile */
+        display: none; /* Controlled by JS or .open class */
+        background-color: var(--primary-color-original); /* Darker for contrast */
+        box-shadow: none;
+        border-top: none;
+        border-radius: 0;
+        padding: 0;
+        min-width: auto;
+    }
+    .nav-item.open > .dropdown-menu { /* Toggle display with .open class */
+        display: block;
+    }
+    .dropdown-menu li a {
+        padding: 12px 20px;
+        text-align: center;
+        font-size: 1em;
+        color: var(--text-light);
+    }
+    .dropdown-menu li a:hover,
+    .dropdown-menu li a:focus-visible {
+        background-color: var(--accent-color);
+        color: var(--primary-color-original);
+    }
+    .hamburger {
+        display: block;
+    }
+    /* Hamburger animation */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
+@media (min-width: 769px) {
+    .nav-item:hover > .dropdown-menu { /* Show on hover for desktop */
+        display: block;
+    }
+    /* Reset mobile styles if they were in a general .nav-menu.active */
+    .nav-menu {
+        position: static;
+        left: auto;
+        top: auto;
+        flex-direction: row;
+        background-color: transparent;
+        width: auto;
+        text-align: left;
+        transition: none; /* Remove mobile transition */
+        box-shadow: none;
+        padding-bottom: 0;
+        height: auto; /* Reset height */
+        overflow-y: visible; /* Reset overflow */
+    }
+    .nav-menu.active { /* Ensure mobile .active doesn't interfere */
+        left: auto;
+    }
+    .nav-item {
+        width: auto; /* Reset width */
+        border-bottom: none; /* Remove mobile border */
+    }
+    .nav-link {
+        padding: 10px 16px; /* Reset padding */
+        font-size: 1em; /* Reset font size */
+    }
+    .nav-login {
+        margin: 0 0 0 15px; /* Reset margin */
+        display: inline-block; /* Reset display */
+        padding: 9px 20px;
+    }
+    .dropdown-menu { /* Reset mobile dropdown styles to desktop */
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--secondary-color);
+        border-top: 3px solid var(--accent-color);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        min-width: 200px;
+        z-index: 1001;
+        border-radius: 0 0 5px 5px;
+        padding: 5px 0;
+        animation: none; /* Remove any mobile animation */
+    }
+    .nav-item.open > .dropdown-menu { /* Mobile .open should not affect desktop */
+         display: none; /* Keep hidden unless hovered */
+    }
+     .nav-item:hover > .dropdown-menu { /* Ensure hover still works */
+        display: block;
+    }
+    .dropdown-menu li a {
+        padding: 10px 20px;
+        text-align: left;
+        font-size: 1em;
+        color: var(--text-light);
+    }
+    .dropdown-menu li a:hover,
+    .dropdown-menu li a:focus-visible {
+        background-color: var(--accent-color);
+        color: var(--primary-color-original);
+    }
+    .hamburger {
+        display: none; /* Hide hamburger on desktop */
+    }
+}
+/* Navbar Media Queries: End */
+
+/* General Button Styles: Start */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-family: var(--font-secondary);
+    font-weight: 600;
+}
+
+.btn:focus-visible { /* General focus for all buttons */
+    outline: 2px solid var(--focus-ring-color);
+    outline-offset: 2px;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--primary-color-original); /* Dark text on light accent */
+    border-color: var(--accent-color);
+    background-image: linear-gradient(to bottom, var(--accent-color) 0%, #00b6cb 100%);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    background-color: #00a8b5;
+    border-color: #0097a3;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    background-image: linear-gradient(to bottom, #00a8b5 0%, #0097a3 100%);
+}
+
+.btn-primary:focus-visible {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 0 2px var(--primary-color), 0 0 0 4px var(--focus-ring-color);
+    outline: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 2px solid var(--text-light);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+    background-color: var(--text-light);
+    color: var(--primary-color); /* Dark text on light BG */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary:focus-visible {
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1), 0 0 0 2px var(--primary-color), 0 0 0 4px var(--focus-ring-color);
+    outline: none;
+}
+
+.btn-lg {
+    padding: 15px 35px;
+    font-size: 1.1em;
+}
+
+.btn-glow:hover,
+.btn-glow:focus-visible {
+    box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.6), 0 0 25px rgba(var(--accent-rgb), 0.4), 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.btn-glow:focus-visible {
+    box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.6), 0 0 25px rgba(var(--accent-rgb), 0.4), 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 0 2px var(--primary-color), 0 0 0 4px var(--focus-ring-color);
+}
+/* General Button Styles: End */
+
+/* Footer CSS: Start */
+footer { 
+    background-color: #101020; 
+    color: rgba(255,255,255,0.7); 
+    padding: 50px 20px 30px; 
+    border-top: 5px solid var(--accent-color); 
+}
+
+.footer-container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+}
+
+.footer-links { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 30px; 
+    margin-bottom: 40px; 
+}
+
+.footer-column { 
+    flex: 1; 
+    min-width: 100%; 
+    max-width: 300px; 
+    text-align: center; 
+}
+
+.footer-column h4 { 
+    font-family: var(--font-primary); 
+    color: var(--text-light); 
+    font-size: 1.2em; 
+    margin-bottom:10px; 
+    padding-bottom: 0; 
+    display: block; 
+}
+
+.footer-column h4::after { 
+    content: ""; 
+    display: block; 
+    width: 50px; 
+    height: 2px; 
+    background: var(--accent-color); 
+    margin: 8px auto 0; 
+}
+
+.footer-column a { 
+    display: block; 
+    color: rgba(255,255,255,0.7); 
+    margin-bottom: 10px; 
+    font-size: 0.95em; 
+    border-radius: 2px; 
+}
+
+.footer-column a:hover, 
+.footer-column a:focus-visible { 
+    color: var(--accent-color); 
+    text-decoration: none; 
+}
+
+.footer-column a:focus-visible { 
+    outline: 2px solid var(--focus-ring-color); 
+    outline-offset: 2px; 
+}
+
+.footer-bottom { 
+    text-align: center; 
+    padding-top: 30px; 
+    border-top: 1px solid var(--secondary-color); 
+    font-size: 0.9em; 
+}
+
+.footer-bottom p { 
+    margin-bottom: 8px; 
+}
+
+.footer-bottom a { 
+    color: rgba(255,255,255,0.7); 
+    margin: 0 8px; 
+    border-radius: 2px; 
+}
+
+.footer-bottom a:hover, 
+.footer-bottom a:focus-visible { 
+    color: var(--accent-color); 
+}
+
+.footer-bottom a:focus-visible { 
+    outline: 2px solid var(--focus-ring-color); 
+    outline-offset: 2px; 
+}
+/* Footer CSS: End */
+
+/* Footer Media Queries: Start */
+@media (min-width: 769px) {
+    .footer-links { 
+        flex-direction: row; 
+        align-items: flex-start; 
+        justify-content: space-between; 
+        gap: 30px; 
+    }
+    .footer-column { 
+        flex: 1; 
+        min-width: 180px; 
+        max-width: none; 
+        text-align: left; 
+    }
+    .footer-column h4 { 
+        display: inline-block; 
+        border-bottom: 2px solid var(--accent-color); 
+        padding-bottom: 8px; 
+        margin-bottom: 15px; 
+    }
+    .footer-column h4::after { 
+        display: none; 
+    }
+}
+/* Footer Media Queries: End */
+
+/* Utility class that might be useful (Optional) */
+.container {
+    max-width: 1200px; /* Or your preferred max-width */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;  /* Or your preferred padding */
+    padding-right: 15px; /* Or your preferred padding */
+}
+
+
+
+/* Hero Section: Empower Your Empire - Specific Styles Start */
+.empire-hero {
+    min-height: calc(100vh - var(--nav-height));
+    display: flex; /* Used to center content vertically */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center direct child vertically */
+    align-items: center; /* Center direct child horizontally */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--primary-color);
+    padding: 30px 0; /* Reduced padding for mobile */
+}
+
+.hero-background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-content-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ensure container takes width for padding */
+}
+
+.empire-hero-headline {
+    font-size: 2em; /* Slightly reduced for mobile to help one-lining */
+    font-weight: 800;
+    color: var(--text-light);
+    margin-bottom: 15px; /* Reduced margin */
+    line-height: 1.2;
+    min-height: 1.2em; /* Adjusted for single line expectation */
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background-color: var(--accent-color);
+    animation: blink 0.7s infinite;
+    vertical-align: text-bottom;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.sub-headline {
+    font-size: 0.95em; /* Slightly reduced for mobile */
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 550px; /* Adjusted max-width */
+    margin: 0 auto 25px auto; /* Reduced bottom margin */
+    line-height: 1.5;
+}
+
+.hook-points {
+    margin-bottom: 30px; /* Reduced margin */
+    max-width: 500px;
+    width: 90%;
+}
+
+.hook-points ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hook-points li {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 12px; /* Reduced margin */
+    font-size: 0.9em; /* Slightly reduced */
+    color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(var(--secondary-color-rgb), 0.4); /* Slightly more prominent */
+    padding: 10px 15px;
+    border-radius: 6px;
+    border-left: 4px solid var(--accent-color); /* Thicker accent border */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.hook-points li:hover {
+    transform: translateX(5px) scale(1.02); /* Subtle lift and shift */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.hook-points .icon {
+    stroke: var(--accent-color);
+    width: 20px; /* Slightly smaller icons for mobile */
+    height: 20px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.hook-points li strong {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.hero-cta-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px; /* Reduced gap */
+    width: 100%;
+    margin-top: 10px; /* Added small top margin */
+}
+
+.hero-cta-buttons .btn {
+    width: 85%;
+    max-width: 300px; /* Reduced max-width for mobile consistency */
+}
+
+.btn-secondary-outline {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+}
+
+.btn-secondary-outline:hover,
+.btn-secondary-outline:focus-visible {
+    background-color: var(--accent-color);
+    color: var(--primary-color-original);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(var(--accent-rgb), 0.2);
+}
+.btn-secondary-outline:focus-visible {
+     box-shadow: 0 4px 10px rgba(var(--accent-rgb), 0.2), 0 0 0 2px var(--primary-color), 0 0 0 4px var(--focus-ring-color);
+    outline: none;
+}
+
+/* Tablet Styles - Start */
+@media (min-width: 768px) {
+    .empire-hero {
+        padding: 40px 0; /* Adjusted padding */
+    }
+    .empire-hero-headline {
+        font-size: 2.8em; /* Headline larger for tablet */
+    }
+    .sub-headline {
+        font-size: 1.1em; /* Sub-headline larger */
+        margin-bottom: 30px;
+        max-width: 650px;
+    }
+    .hook-points {
+        margin-bottom: 35px;
+        width: 100%; /* Allow grid to take full width of container */
+        max-width: 700px; /* Max width for the grid container */
+    }
+    .hook-points ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2x2 Grid */
+        gap: 15px;
+    }
+    .hook-points li {
+        font-size: 0.95em;
+        margin-bottom: 0; /* Grid gap handles spacing */
+        padding: 12px 18px;
+    }
+    .hook-points .icon {
+        width: 22px;
+        height: 22px;
+    }
+    .hero-cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        width: auto;
+        margin-top: 20px; /* More space before buttons on tablet */
+    }
+    .hero-cta-buttons .btn {
+        width: auto;
+        min-width: 220px; /* Good readable width for buttons */
+        max-width: none;
+    }
+}
+/* Tablet Styles - End */
+
+/* Desktop Styles - Start */
+@media (min-width: 992px) {
+    .empire-hero {
+        padding: 50px 0; /* Adjusted padding */
+    }
+    .empire-hero-headline {
+        font-size: 3.2em; /* Headline even larger */
+    }
+    .sub-headline {
+        font-size: 1.2em;
+        max-width: 700px;
+        margin-bottom: 40px;
+    }
+     .hook-points {
+        margin-bottom: 40px; /* More space before buttons */
+    }
+    .hook-points ul {
+        gap: 20px; /* Slightly larger gap in grid */
+    }
+     .hook-points li {
+        padding: 15px 20px; /* More padding in list items */
+    }
+}
+/* Desktop Styles - End */
+
+/* Larger Desktop Styles - Start */
+@media (min-width: 1200px) {
+    .empire-hero-headline {
+        font-size: 3.5em; /* Max out headline size */
+    }
+    .sub-headline {
+        font-size: 1.25em;
+        max-width: 750px;
+    }
+}
+/* Larger Desktop Styles - End */
+/* Hero Section: Empower Your Empire - Specific Styles End */
+
+
+
+
+/* Reseller Pricing Plans Section - Start */
+.pricing-section {
+    padding: 50px 0; 
+    background-color: var(--services-bg-color); 
+}
+
+.pricing-section .section-title,
+.pricing-section .section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+}
+
+.pricing-section .section-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.pricing-section .section-subtitle {
+    font-size: 1em;
+    max-width: 90%;
+    margin: 0 auto 30px auto;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+}
+
+.pricing-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    background-color: rgba(var(--primary-color-rgb, 38, 44, 77), 0.5); 
+    border-radius: 8px;
+    padding: 5px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    background-color: transparent;
+    color: var(--text-light);
+    font-weight: 600;
+    font-size: 0.9em;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-btn.active {
+    background-color: var(--accent-color);
+    color: var(--primary-color-original);
+}
+
+.toggle-btn:not(.active):hover {
+    background-color: rgba(var(--secondary-color-rgb), 0.7);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 25px;
+}
+
+.pricing-card {
+    background-color: var(--primary-color); 
+    border-radius: 10px;
+    padding: 30px 25px 25px 25px; 
+    text-align: center;
+    border: 2px solid var(--accent-color); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: opacity 0.6s cubic-bezier(0.645, 0.045, 0.355, 1),
+                transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1),
+                box-shadow 0.3s ease-out; 
+    position: relative; 
+    overflow: visible; 
+}
+
+.pricing-card.visible { 
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pricing-card:hover {
+    transform: translateY(-7px) scale(1.03); 
+    box-shadow: 0 12px 28px rgba(var(--accent-rgb), 0.25);
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: var(--accent-color);
+    color: var(--primary-color-original);
+    padding: 5px 14px; 
+    font-size: 0.85em; 
+    font-weight: 700;
+    border-radius: 5px;
+    z-index: 2; 
+    white-space: nowrap; 
+}
+
+/* No specific style needed for .popular, .recommended, .best-value here if only badge text changes.
+   Desktop media query will handle slight elevation for them. */
+
+.plan-name {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    margin-top: 15px; /* Adjusted for badge */
+}
+
+.plan-price {
+    margin-bottom: 25px;
+    color: var(--accent-color);
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+}
+.original-price {
+    font-size: 0.95em; 
+    color: rgba(255, 255, 255, 0.65); 
+    text-decoration: line-through;
+    margin-bottom: 4px; 
+    min-height: 1.2em; 
+    font-weight: 500; 
+}
+
+.current-price-line {
+    display: flex;
+    align-items: baseline; 
+    justify-content: center;
+    gap: 4px; 
+}
+
+.plan-price .currency {
+    font-size: 1.1em; 
+    font-weight: 500;
+    color: var(--accent-color); 
+}
+.plan-price .price-value {
+    font-size: 2.5em; 
+    font-weight: 800;
+    color: var(--accent-color); 
+    line-height: 1; 
+}
+.plan-price .period {
+    font-size: 0.9em;
+    color: rgba(255,255,255,0.7);
+}
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+    text-align: left;
+    flex-grow: 1; 
+}
+
+.plan-features li {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: rgba(255,255,255,0.9);
+    display: flex;
+    align-items: center;
+}
+.plan-features .icon {
+    stroke: var(--accent-color);
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    fill: none; 
+}
+.plan-features strong {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.plan-cta {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1em;
+    margin-top: auto; 
+}
+
+.plan-note {
+    font-size: 0.75em;
+    color: rgba(255,255,255,0.6);
+    margin-top: 10px;
+}
+/* Reseller Pricing Plans Section - End */
+
+/* Reseller Pricing Plans Section - Tablet Media Queries Start */
+@media (min-width: 768px) {
+    .pricing-section .section-title {
+        font-size: 2.4em;
+    }
+    .pricing-section .section-subtitle {
+        font-size: 1.1em;
+        max-width: 650px;
+        margin-bottom: 40px;
+    }
+    .pricing-toggle {
+        margin-bottom: 40px;
+        max-width: 380px; 
+    }
+    .toggle-btn {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 30px;
+    }
+    .pricing-card {
+        padding: 35px 30px 30px 30px; 
+    }
+    .plan-name {
+        font-size: 1.8em;
+        margin-top: 18px; 
+    }
+    .plan-features li {
+        font-size: 0.95em;
+    }
+    .plan-price .currency {
+        font-size: 1.2em;
+    }
+    .badge {
+        padding: 6px 16px; 
+        font-size: 0.9em;
+    }
+}
+/* Reseller Pricing Plans Section - Tablet Media Queries End */
+
+/* Reseller Pricing Plans Section - Desktop Media Queries Start */
+@media (min-width: 992px) {
+    .pricing-section .section-title { /* These lines are already there */
+        font-size: 2.8em;
+    }
+    .pricing-section .section-subtitle { /* These lines are already there */
+         font-size: 1.15em;
+         max-width: 700px;
+         margin-bottom: 50px;
+    }
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr); 
+        /* YEH ADD KAREIN YA ADJUST KAREIN */
+        row-gap: 45px; /* Example: Vertical gap ko 45px kar diya */
+        column-gap: 30px; /* Horizontal gap ko 30px hi rakha (tablet jaisa) */
+    }
+    /* Make highlighted cards stand out more */
+    .pricing-card.popular,
+    .pricing-card.recommended,
+    .pricing-card.best-value {
+        transform: translateY(-10px) scale(1.02); 
+    }
+    .pricing-card.popular:hover,
+    .pricing-card.recommended:hover,
+    .pricing-card.best-value:hover {
+        transform: translateY(-15px) scale(1.04); 
+    }
+    .plan-price .currency { /* This line is already there */
+        font-size: 1.3em;
+    }
+}
+/* Reseller Pricing Plans Section - Desktop Media Queries End */
+
+/* Reseller Pricing Plans Section - Larger Desktop Media Queries Start */
+@media (min-width: 1200px) {
+    .pricing-section .section-title {
+        font-size: 3em;
+    }
+    .pricing-section .section-subtitle {
+        font-size: 1.2em;
+    }
+}
+/* Reseller Pricing Plans Section - Larger Desktop Media Queries End */
+
+
+
+/* How It Works Section - Start */
+.how-it-works-section {
+    padding: 50px 0;
+    background-color: var(--primary-color); /* Alternating background */
+}
+
+.how-it-works-section .section-title,
+.how-it-works-section .section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+}
+
+.how-it-works-section .section-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.how-it-works-section .section-subtitle {
+    font-size: 1em;
+    max-width: 90%;
+    margin: 0 auto 40px auto; /* Increased bottom margin */
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+}
+
+.steps-container {
+    display: flex;
+    flex-direction: column; /* Stack vertically on mobile */
+    align-items: center;
+    gap: 30px; /* Gap between stacked cards on mobile */
+}
+
+.step-card {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid rgba(var(--accent-rgb), 0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 380px; /* Max width for cards on mobile/tablet */
+    opacity: 0; /* Initial for animation */
+    transform: translateY(30px); /* Initial for animation */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-card.visible { /* Class added by JS for animation */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.step-number-container {
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-color);
+    color: var(--primary-color-original);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(var(--accent-rgb), 0.3);
+}
+
+.step-number {
+    font-size: 1.4em;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.step-icon {
+    margin-bottom: 15px;
+}
+
+.step-icon svg {
+    stroke: var(--accent-color);
+    width: 40px; /* Adjusted icon size */
+    height: 40px;
+}
+
+.step-title {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.step-description {
+    font-size: 0.9em;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.6;
+    flex-grow: 1; /* Allows description to take available space */
+}
+
+.step-connector {
+    display: none; /* Hidden on mobile */
+}
+/* How It Works Section - End */
+
+/* How It Works Section - Tablet Media Queries Start */
+@media (min-width: 768px) {
+    .how-it-works-section .section-title {
+        font-size: 2.4em;
+    }
+    .how-it-works-section .section-subtitle {
+        font-size: 1.1em;
+        max-width: 650px;
+        margin-bottom: 50px;
+    }
+    .steps-container {
+        gap: 35px; /* Slightly larger gap */
+    }
+     .step-card {
+        max-width: 420px;
+    }
+    .step-icon svg {
+        width: 44px;
+        height: 44px;
+    }
+    .step-title {
+        font-size: 1.5em;
+    }
+     .step-description {
+        font-size: 0.95em;
+    }
+}
+/* How It Works Section - Tablet Media Queries End */
+
+/* How It Works Section - Desktop Media Queries Start */
+@media (min-width: 992px) {
+    .how-it-works-section .section-title {
+        font-size: 2.8em;
+    }
+    .how-it-works-section .section-subtitle {
+        font-size: 1.15em;
+        max-width: 700px;
+        margin-bottom: 60px;
+    }
+    .steps-container {
+        flex-direction: row; /* Align horizontally on desktop */
+        justify-content: space-around; /* Distribute space */
+        align-items: flex-start; /* Align cards to the top */
+        gap: 20px; /* Gap between items (cards and connectors) */
+    }
+    .step-card {
+        flex-basis: 0; /* Allow cards to grow based on flex-grow */
+        flex-grow: 1; /* Distribute space among cards */
+        max-width: 320px; /* Control max width of individual cards */
+        min-height: 300px; /* Ensure cards have some consistent height */
+    }
+    /* Staggered animation for desktop */
+    .step-card:nth-child(1).visible { transition-delay: 0.1s; }
+    .step-connector:nth-child(2).visible { transition-delay: 0.2s; }
+    .step-card:nth-child(3).visible { transition-delay: 0.3s; }
+    .step-connector:nth-child(4).visible { transition-delay: 0.4s; }
+    .step-card:nth-child(5).visible { transition-delay: 0.5s; }
+
+
+    .step-connector {
+        display: block; /* Show connectors on desktop */
+        flex-grow: 0.5; /* Connector takes less space than cards */
+        align-self: center; /* Center connector vertically with cards */
+        height: 4px; /* Thickness of the line */
+        background-color: var(--accent-color);
+        opacity: 0; /* Initial for animation */
+        transform: scaleX(0); /* Initial for animation */
+        transform-origin: left;
+        transition: opacity 0.4s ease-out 0.3s, transform 0.4s ease-out 0.3s; /* Delay connector animation */
+        position: relative;
+        margin: 0 10px; /* Add some horizontal margin */
+    }
+    .step-connector.visible {
+        opacity: 0.7;
+        transform: scaleX(1);
+    }
+    /* Optional: Arrowhead for connector (can be complex, simple line is often cleaner) */
+    /* .step-connector::after {
+        content: '►';
+        position: absolute;
+        right: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--accent-color);
+        font-size: 1.5em;
+    } */
+}
+/* How It Works Section - Desktop Media Queries End */
+
+/* How It Works Section - Larger Desktop Media Queries Start */
+@media (min-width: 1200px) {
+    .how-it-works-section .section-title {
+        font-size: 3em;
+    }
+    .how-it-works-section .section-subtitle {
+        font-size: 1.2em;
+    }
+    .step-card {
+        max-width: 350px; /* Slightly larger cards */
+    }
+}
+/* How It Works Section - Larger Desktop Media Queries End */
+
+
+
+/* Reseller Profit Calculator Section - Start */
+.calculator-section {
+    padding: 60px 20px;
+    background-color: var(--services-bg-color);
+}
+
+.calculator-section .section-title,
+.calculator-section .section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+}
+
+.calculator-section .section-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.calculator-section .section-subtitle {
+    font-size: 1em;
+    max-width: 90%;
+    margin: 0 auto 40px auto;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+}
+
+.calculator-wrapper {
+    background-color: var(--primary-color);
+    border-radius: 15px; /* Slightly more rounded */
+    padding: 20px; /* Base padding for mobile */
+    max-width: 800px; /* Increased max-width for better desktop layout */
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25); /* Softer shadow */
+    border: 1px solid var(--secondary-color);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.calculator-wrapper.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.calculator-panel {
+    margin-bottom: 25px; /* Space between panels on mobile */
+}
+.calculator-panel:last-of-type {
+    margin-bottom: 0;
+}
+
+.panel-title {
+    font-size: 1.3em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--secondary-color);
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9em; /* Slightly smaller label */
+    font-weight: 500; /* Lighter weight */
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 8px;
+}
+
+.slider-wrapper { /* New wrapper for slider and its value */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: rgba(var(--secondary-color-rgb), 0.3);
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    flex-grow: 1;
+    height: 10px; /* Slightly thicker slider track */
+    background: var(--secondary-color);
+    outline: none;
+    opacity: 0.9;
+    transition: opacity .2s;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.slider:hover { opacity: 1; }
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px; /* Slightly larger thumb */
+    height: 22px;
+    background: var(--accent-color);
+    cursor: pointer;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color); /* Match wrapper bg */
+    box-shadow: 0 0 8px rgba(var(--accent-rgb), 0.6);
+    margin-top: -6px; /* Adjust thumb position vertically */
+}
+.slider::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    background: var(--accent-color);
+    cursor: pointer;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 8px rgba(var(--accent-rgb), 0.6);
+}
+
+.slider-value-display { /* Renamed from slider-value */
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--text-light);
+    /* background-color: transparent; No separate background now */
+    padding: 0; /* No padding needed now */
+    min-width: 80px; /* Adjusted width */
+    text-align: right;
+    white-space: nowrap;
+}
+
+.custom-select-wrapper {
+    position: relative;
+    display: block; /* Make it block to fill width or inline-block if needed */
+}
+.plan-selector {
+    width: 100%; /* Make select full width of its parent */
+    padding: 12px 15px; /* Increased padding */
+    background-color: rgba(var(--secondary-color-rgb), 0.3);
+    color: var(--text-light);
+    border: 1px solid var(--secondary-color); /* Subtler border */
+    border-radius: 6px;
+    font-size: 0.95em;
+    cursor: pointer;
+    outline: none;
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.plan-selector:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(var(--accent-rgb), 0.3);
+}
+.custom-select-arrow { /* Custom arrow */
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 7px solid var(--accent-color);
+    pointer-events: none; /* So it doesn't interfere with select click */
+}
+.plan-cost-display { /* For the "Approx. X" text */
+    display: block;
+    text-align: right;
+    font-size: 0.85em;
+    color: rgba(255,255,255,0.7);
+    margin-top: 5px;
+}
+
+.calculator-results-panel { /* Styles for the results side */
+    background-color: rgba(var(--secondary-color-rgb), 0.2); /* Slightly different bg for results */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px; /* Increased spacing */
+    padding-bottom: 12px; /* Increased padding */
+    border-bottom: 1px solid rgba(var(--secondary-color-rgb), 0.4); /* Slightly more visible dash */
+}
+.result-item:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.result-label {
+    font-size: 0.95em; /* Adjusted size */
+    color: rgba(255,255,255,0.9);
+}
+
+.result-value {
+    font-size: 1.2em; /* Adjusted size */
+    font-weight: 600; /* Slightly less bold */
+    color: var(--text-light);
+    text-align: right;
+}
+
+.profit-item .result-label {
+    font-weight: 700; /* Bolder profit label */
+    color: var(--accent-color); /* Accent color for profit label */
+}
+.highlight-profit {
+    color: var(--success-color) !important;
+    font-size: 1.8em; /* Even larger profit value */
+    font-weight: 800; /* Boldest */
+    text-shadow: 0 0 10px rgba(var(--success-rgb), 0.5);
+}
+
+.calculator-disclaimer {
+    font-size: 0.75em; /* Smaller disclaimer */
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+.calculator-cta-area { /* NEW: For both buttons */
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column; /* Stack on mobile */
+    gap: 15px;
+    align-items: center;
+}
+.calculator-cta-area .btn { /* Target buttons within this area */
+    width: 100%;
+    max-width: 320px; /* Consistent button width on mobile */
+}
+/* Reseller Profit Calculator Section - End */
+
+/* Reseller Profit Calculator Section - Tablet Media Queries Start */
+@media (min-width: 768px) {
+    .calculator-section .section-title {
+        font-size: 2.4em;
+    }
+    .calculator-section .section-subtitle {
+        font-size: 1.1em;
+        max-width: 650px;
+        margin-bottom: 50px;
+    }
+    .calculator-wrapper {
+        padding: 30px;
+    }
+    .panel-title {
+        font-size: 1.4em;
+        text-align: left; /* Align panel titles left on tablet+ */
+    }
+    .input-group label {
+        font-size: 1em;
+    }
+    .slider-value-display {
+        font-size: 0.95em;
+        min-width: 90px;
+    }
+    .plan-selector {
+        font-size: 1em;
+    }
+     .plan-cost-display {
+        font-size: 0.9em;
+    }
+    .result-label {
+        font-size: 1.05em;
+    }
+    .result-value {
+        font-size: 1.3em;
+    }
+    .highlight-profit {
+        font-size: 2em;
+    }
+    .calculator-cta-area {
+        flex-direction: row; /* Side-by-side buttons on tablet */
+        justify-content: center;
+    }
+    .calculator-cta-area .btn {
+        width: auto; /* Allow buttons to size to content */
+        min-width: 200px; /* Minimum width for better appearance */
+    }
+}
+/* Reseller Profit Calculator Section - Tablet Media Queries End */
+
+/* Reseller Profit Calculator Section - Desktop Media Queries Start */
+@media (min-width: 992px) {
+    .calculator-section .section-title {
+        font-size: 2.8em;
+    }
+    .calculator-section .section-subtitle {
+        font-size: 1.15em;
+        max-width: 700px;
+        margin-bottom: 60px;
+    }
+    .calculator-wrapper {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr; /* Adjusted column ratio */
+        gap: 35px; /* Reduced gap */
+        padding: 35px;
+    }
+    .calculator-inputs-panel { /* Renamed from calculator-inputs */
+        margin-bottom: 0;
+    }
+    .calculator-results-panel { /* Renamed from calculator-results */
+        border-left: 1px solid var(--secondary-color); /* Separator line */
+        padding-left: 35px; /* Padding for separator */
+        align-self: flex-start; /* Align to top if inputs are shorter */
+        margin-top: 0; /* Remove mobile margin */
+        padding-top: 0; /* Remove mobile padding */
+    }
+    .result-item {
+        padding: 10px 0; /* Slightly less padding */
+    }
+    .calculator-cta-area {
+        grid-column: 1 / -1;
+        margin-top: 25px;
+    }
+}
+/* Reseller Profit Calculator Section - Desktop Media Queries End */
+
+/* Reseller Profit Calculator Section - Larger Desktop Media Queries Start */
+@media (min-width: 1200px) {
+    .calculator-section .section-title {
+        font-size: 3em;
+    }
+    .calculator-section .section-subtitle {
+        font-size: 1.2em;
+    }
+    .calculator-wrapper {
+        gap: 45px; /* Increased gap for larger screens */
+        padding: 40px;
+    }
+    .calculator-results-panel {
+        padding-left: 45px;
+    }
+}
+
+.plan-selector option {
+    background-color: #262C4D; /* Aapka dark blue */
+    color: #FFFFFF; /* White text */
+}
+
+.plan-selector option:hover { /* Hover state for options */
+    background-color: var(--accent-color); /* Accent color on hover */
+    color: var(--primary-color-original);
+}
+/* Reseller Profit Calculator Section - Larger Desktop Media Queries End */
+
+
+/* Testimonials Section - Start */
+.testimonial-section {
+    padding: 50px 0;
+    background-color: var(--primary-color); /* Or a slightly different shade if needed */
+    overflow: hidden; /* Important for the slider functionality */
+}
+
+.testimonial-section .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.testimonial-section .section-title,
+.testimonial-section .section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+}
+
+.testimonial-section .section-title {
+    font-size: 2em; /* Mobile first size */
+    margin-bottom: 10px;
+}
+
+.testimonial-section .section-subtitle {
+    font-size: 1em; /* Mobile first size */
+    max-width: 90%;
+    margin: 0 auto 40px auto;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+}
+
+.testimonial-slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+    /* Optional: mask for fading edges on mobile/tablet if desired */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.testimonial-track {
+    display: flex;
+    /* JS will set width and animation */
+    will-change: transform;
+}
+
+.testimonial-card {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 15px;
+    width: 280px; /* Fixed width for each card on mobile */
+    flex-shrink: 0; /* Prevents cards from shrinking */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid rgba(var(--accent-rgb, 0, 207, 232), 0.2); /* Fallback for accent-rgb */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes author to bottom if text is short */
+    min-height: 220px; /* Ensures a consistent minimum height */
+}
+
+.testimonial-card .stars {
+    color: var(--warning-color);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.testimonial-card .testimonial-text {
+    font-size: 0.95em;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-style: italic;
+    flex-grow: 1; /* Allows text to take available space */
+}
+.testimonial-card .testimonial-text::before,
+.testimonial-card .testimonial-text::after {
+    content: '"';
+    color: var(--accent-color);
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 0;
+}
+.testimonial-card .testimonial-text::before { margin-right: 5px; vertical-align: -0.3em; }
+.testimonial-card .testimonial-text::after { margin-left: 5px; vertical-align: -0.3em; }
+
+
+.testimonial-card .author-info {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid rgba(var(--accent-rgb, 0, 207, 232), 0.15);
+    text-align: right;
+}
+
+.testimonial-card .author-name {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .testimonial-section .section-title {
+        font-size: 2.4em;
+    }
+    .testimonial-section .section-subtitle {
+        font-size: 1.1em;
+        max-width: 650px;
+        margin-bottom: 50px;
+    }
+    .testimonial-card {
+        width: 300px; /* Slightly wider cards on tablet */
+        padding: 25px;
+        margin-right: 20px;
+    }
+     .testimonial-slider-wrapper { /* Keep mask for tablet or remove if showing more cards clearly */
+        /* mask-image: none; /* Example: remove mask if desired */
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 992px) {
+    .testimonial-section .section-title {
+        font-size: 2.8em;
+    }
+    .testimonial-section .section-subtitle {
+        font-size: 1.15em;
+        max-width: 700px;
+        margin-bottom: 60px;
+    }
+    .testimonial-card {
+        width: 320px; /* Even wider cards on desktop */
+    }
+    .testimonial-slider-wrapper {
+        /* On desktop, if many cards are visible, fading edges might not be needed */
+         mask-image: none; /* Usually looks better on desktop to see full cards */
+    }
+}
+
+/* Larger Desktop Styles */
+@media (min-width: 1200px) {
+    .testimonial-section .section-title {
+        font-size: 3em;
+    }
+    .testimonial-card {
+        width: 340px;
+    }
+}
+/* Testimonials Section - End */
+
+
+/* Reseller Personas Section - Start */
+.personas-section {
+    padding: 50px 0;
+    background-color: var(--services-bg-color); /* Your alternating background color */
+    color: var(--text-light);
+}
+
+.personas-section .section-title,
+.personas-section .section-subtitle {
+    text-align: center;
+}
+
+.personas-section .section-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.personas-section .section-subtitle {
+    font-size: 1em;
+    max-width: 90%;
+    margin: 0 auto 40px auto;
+    color: rgba(255, 255, 255, 0.85); /* Assuming light text on dark alternate BG */
+    line-height: 1.6;
+}
+
+.personas-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.persona-card {
+    background-color: var(--secondary-color); /* Cards will use the darker secondary color */
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid rgba(var(--accent-rgb, 0, 207, 232), 0.3);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    display: flex; /* Added to help align content if needed */
+    flex-direction: column; /* Stack header and content */
+    /* Removed hover animations as they are not toggleable now */
+}
+
+.persona-header {
+    text-align: center;
+    margin-bottom: 20px;
+    /* cursor: pointer; No longer needed as it's not clickable to toggle */
+}
+
+.persona-icon {
+    margin-bottom: 15px;
+}
+
+.persona-icon svg {
+    width: 48px;
+    height: 48px;
+    stroke: var(--accent-color);
+}
+
+.persona-title {
+    font-size: 1.5em;
+    color: var(--text-light); /* Assuming light text */
+    margin-bottom: 5px;
+}
+
+.persona-subtitle-tag {
+    font-size: 0.85em;
+    color: rgba(var(--accent-rgb, 0, 207, 232), 0.9);
+    font-weight: 500;
+}
+
+.persona-content {
+    /* ALWAYS VISIBLE - NO HIDING, NO TRANSITION */
+    max-height: none; /* Allow content to take full height */
+    opacity: 1;
+    margin-top: 15px; /* Space between header and content */
+    flex-grow: 1; /* Allow content to take available space if card is flex */
+}
+
+/* Removed .persona-card.active .persona-content styles as it's always active/visible */
+
+.persona-point {
+    margin-bottom: 15px;
+}
+
+.persona-point h4 {
+    font-size: 1.1em;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.persona-point p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.9); /* Assuming light text */
+}
+
+.persona-cta {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0 auto; /* Keep CTA at bottom if card uses flex for content */
+    text-align: center;
+    padding: 10px 25px;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .personas-section .section-title {
+        font-size: 2.4em;
+    }
+    .personas-section .section-subtitle {
+        font-size: 1.1em;
+        max-width: 700px;
+        margin-bottom: 50px;
+    }
+    .persona-card {
+        padding: 25px;
+    }
+    .personas-grid {
+        /* Optional: For tablet, if you want them side-by-side (e.g., 2 columns)
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); */
+        /* If keeping single column for clarity on tablet, no change needed here. */
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 992px) {
+    .personas-section .section-title {
+        font-size: 2.8em;
+    }
+    .personas-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+        gap: 30px;
+    }
+    .persona-title {
+        font-size: 1.6em;
+    }
+    /* Ensure cards in the grid try to be of similar height by making them flex containers
+       and allowing content to grow. */
+    .persona-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Pushes CTA to bottom */
+    }
+    .persona-content {
+       flex-grow: 1; /* Allows the content div to expand */
+    }
+
+}
+/* Reseller Personas Section - End */
+
+
+
+
+/* Reseller Journey Map Section - Start */
+.journey-map-section {
+    padding: 60px 20px; /* Added horizontal padding */
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    overflow-x: hidden; /* Important for preventing horizontal scroll on animations */
+}
+
+.journey-map-section .container { /* Ensure container is used for width control */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px; /* Standard container padding */
+    padding-right: 15px;
+}
+
+.journey-map-section .section-title,
+.journey-map-section .section-subtitle {
+    text-align: center;
+}
+
+.journey-map-section .section-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.journey-map-section .section-subtitle {
+    font-size: 1em;
+    max-width: 90%; /* On smaller screens */
+    margin: 0 auto 50px auto;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+}
+
+.journey-wrapper {
+    position: relative;
+    /* Max-width will be controlled by the .container wrapping this section */
+}
+
+.journey-path-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.journey-line {
+    stroke: var(--accent-color);
+    stroke-width: 4;
+    fill: none;
+    stroke-linecap: round;
+    stroke-dasharray: 10, 8; /* Dashed line style: 10px dash, 8px gap */
+    stroke-dashoffset: 1000; /* JS will set to actual pathLength */
+    transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* JS will add .animate class to journey-line when it should draw */
+.journey-line.animate {
+    stroke-dashoffset: 0 !important; /* Override JS initial for smooth transition */
+}
+
+.milestones-container {
+    position: relative;
+    z-index: 1; /* Milestones above the path */
+}
+
+.milestone {
+    position: relative; /* For ::before/::after pseudo-elements if needed & for JS positioning calculations */
+    width: 90%;
+    max-width: 380px;
+    margin: 0 auto 70px auto; /* Vertical spacing, centered on mobile */
+    opacity: 0;
+    transform: translateY(30px) scale(0.95); /* Initial animation state */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.milestone:last-child {
+    margin-bottom: 0;
+}
+.milestone.visible { /* JS adds this class when milestone is in view */
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.milestone-connector { /* Holds the dot, positioned by JS relative to card */
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    z-index: 2; /* Dot above path */
+    /* JS will set top/left/right for precise positioning */
+}
+
+.milestone-dot {
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    border: 3px solid var(--primary-color); /* Creates cutout effect on path */
+    box-shadow: 0 0 10px rgba(var(--accent-rgb, 0,207,232), 0.6); /* Accent color glow */
+}
+
+.milestone-card {
+    background-color: rgba(var(--secondary-color-rgb, 74, 78, 105), 0.85); /* Main secondary color with slight transparency */
+    backdrop-filter: blur(5px); /* Glassmorphism */
+    padding: 25px 20px; /* More padding */
+    border-radius: 10px;
+    border: 1px solid rgba(var(--accent-rgb, 0,207,232), 0.25);
+    text-align: center; /* For mobile */
+    position: relative; /* For icon positioning */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+.milestone-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(var(--accent-rgb, 0,207,232), 0.25);
+}
+
+.milestone-icon {
+    width: 56px;
+    height: 56px;
+    background-color: var(--secondary-color); /* Solid secondary color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 18px rgba(var(--accent-rgb, 0,207,232), 0.35);
+    margin: -48px auto 20px auto; /* Pulls icon up, centered */
+    position: relative; /* Ensure it's above card content flow */
+    z-index: 1; /* Icon above card background */
+    transition: transform 0.3s ease-out;
+}
+.milestone-card:hover .milestone-icon {
+    transform: scale(1.12);
+}
+
+.milestone-icon svg {
+    stroke: var(--accent-color);
+    width: 28px;
+    height: 28px;
+}
+
+.milestone-title {
+    font-size: 1.4em;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.milestone-description {
+    font-size: 0.95em;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.65;
+    margin-bottom: 15px;
+}
+
+.milestone-feature {
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--accent-color);
+    background-color: rgba(var(--accent-rgb,0,207,232), 0.15);
+    padding: 5px 12px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.journey-cta-wrapper {
+    text-align: center;
+    margin-top: 70px; /* Space after the journey map */
+}
+
+/* Tablet - Intermediate Adjustments (Optional but recommended) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .journey-map-section .section-subtitle {
+        max-width: 80%;
+    }
+    .milestone {
+        max-width: 450px; /* Wider cards for tablet single column */
+        margin-bottom: 80px;
+    }
+    .milestone-title {
+        font-size: 1.5em;
+    }
+    .milestone-description {
+        font-size: 1em;
+    }
+}
+
+
+/* DESKTOP STYLES (min-width: 992px) */
+@media (min-width: 992px) {
+    .journey-map-section .section-title {
+        font-size: 2.8em;
+    }
+    .journey-map-section .section-subtitle {
+        font-size: 1.15em;
+        max-width: 700px; /* Standard max-width for subtitles on desktop */
+    }
+
+    .milestone {
+        width: 45%; /* Each card takes up 45% of the container's width */
+        max-width: 480px; /* Slightly larger max-width for desktop */
+        margin-bottom: 100px; /* More vertical space between milestones */
+    }
+
+    .milestone:nth-child(odd) {
+        margin-left: 0; /* Align to the left edge of its 45% block */
+        margin-right: auto; /* Pushes it left within the 50% "column" if not full width */
+        /* The actual centering/offset relative to the path is handled by JS for the dots */
+    }
+     .milestone:nth-child(odd) .milestone-card {
+        text-align: right;
+    }
+    .milestone:nth-child(odd) .milestone-icon {
+        margin-left: auto; /* Icon to the right for odd items */
+        margin-right: -28px; /* Pull icon towards the center path line */
+    }
+
+    .milestone:nth-child(even) {
+        margin-left: auto; /* Align to the right edge of its 45% block */
+        margin-right: 0; /* Pushes it right */
+        /* The actual centering/offset is handled by JS for the dots */
+    }
+    .milestone:nth-child(even) .milestone-card {
+        text-align: left;
+    }
+    .milestone:nth-child(even) .milestone-icon {
+        margin-right: auto; /* Icon to the left for even items */
+        margin-left: -28px; /* Pull icon towards the center path line */
+    }
+
+    /* The .milestone-connector div is positioned by JS.
+       Its CSS sets the dot style. No complex ::before lines are needed
+       if the main SVG path connects all dots progressively. */
+
+    .milestone-title {
+        font-size: 1.6em;
+    }
+    .milestone-description {
+        font-size: 1em;
+    }
+}
+/* Reseller Journey Map Section - End */
